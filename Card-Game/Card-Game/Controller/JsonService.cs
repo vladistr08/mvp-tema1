@@ -11,12 +11,10 @@ namespace Card_Game
     public class JsonService
     {
         public static void SerializeToFile<ObjectToSerializeType>(string fileName, ObjectToSerializeType obj)
-        { 
+        {
+            fileName = "C:\\mvp\\mvp-tema1\\Card-Game\\Card-Game\\Asset\\Data\\" + fileName;
             string jsonString = JsonSerializer.Serialize(obj);
-            Console.WriteLine(jsonString);
-            File.WriteAllText(fileName, jsonString);
-            Console.WriteLine(File.ReadAllText(fileName));
-            
+            File.WriteAllText(fileName, jsonString);            
         }
     }
 }

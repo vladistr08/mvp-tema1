@@ -26,7 +26,7 @@ namespace Card_Game
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Player p = new Player("Aurel", "../../../");
-            JsonService.SerializeToFile<Player>("C:\\mvp\\mvp-tema1\\Card-Game\\Card-Game\\Asset\\data.json", p);
+            JsonService.SerializeToFile<Player>(p.DataFileName, p);
         }
     }
 }
