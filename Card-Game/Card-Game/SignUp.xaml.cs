@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,24 +15,30 @@ using System.Windows.Shapes;
 namespace Card_Game
 {
     /// <summary>
-    /// Interaction logic for SignIn.xaml
+    /// Interaction logic for SignUp.xaml
     /// </summary>
-    public partial class SignIn : Window
+    public partial class SignUp : Window
     {
-        public SignIn()
+        
+        private string currentImagePath;
+        public SignUp()
         {
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            SignUp signUp = new SignUp();
-            signUp.Show();
+
         }
 
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            string userNameInput = userInput.Text;
+            Player newPlayer = new Player(userNameInput, "../../image");
+            if (newPlayer == null)
+                MessageBox.Show("puti");
+            View.User userControl = new View.User();
+            userControl.AddUser(newPlayer);
         }
     }
 }
