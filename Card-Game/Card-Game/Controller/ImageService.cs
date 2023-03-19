@@ -22,13 +22,13 @@ namespace Card_Game.Controller
         }
 
         private static List<string> getRandomCards(int n) {
-            DirectoryInfo dir = new DirectoryInfo("C:\\mvp\\mvp-tema1\\Card-Game\\Card-Game\\Asset\\Image\\Cards\\");
+            DirectoryInfo dir = new DirectoryInfo("../../Asset/Image/Cards/");
             var files= dir.GetFiles();
 
             List<string> paths = new List<string>();
             foreach(var file in files)
             {
-                paths.Add("C:\\mvp\\mvp-tema1\\Card-Game\\Card-Game\\Asset\\Image\\Cards\\" + file.ToString());
+                paths.Add(file.FullName);
             }
 
             if(n > paths.Count)
@@ -107,9 +107,9 @@ namespace Card_Game.Controller
         private void populateAvatars()
         {
             AvatarPaths = new List<string>();
-            DirectoryInfo dir = new DirectoryInfo("C:\\mvp\\mvp-tema1\\Card-Game\\Card-Game\\Asset\\Image\\Avatar\\");
+            DirectoryInfo dir = new DirectoryInfo("../../Asset/Image/Avatar/");
             foreach(var file in dir.GetFiles()) {
-                AvatarPaths.Add("C:\\mvp\\mvp-tema1\\Card-Game\\Card-Game\\Asset\\Image\\Avatar\\" + file.ToString());
+                AvatarPaths.Add(file.FullName);
             }
         }
 

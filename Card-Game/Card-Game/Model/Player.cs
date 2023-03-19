@@ -23,7 +23,7 @@ namespace Card_Game
         }
         private string getDataFileName()
         {
-            System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo("C:\\mvp\\mvp-tema1\\Card-Game\\Card-Game\\Asset\\Data\\");
+            System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo("../../Asset/Data/");
             int count = dir.GetFiles().Length + 1;
             return count.ToString() + "_" + Name + "_" + Id.ToString();
         }

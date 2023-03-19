@@ -46,7 +46,7 @@ namespace Card_Game.View
         public static List<Player> GetAllUsers()
         {
             List<Player> users = new List<Player>();
-            string path = "C:\\mvp\\mvp-tema1\\Card-Game\\Card-Game\\Asset\\Data\\";
+            string path = "../../Asset/Data/";
            
             
             foreach (string fileName in Directory.GetFiles(path))

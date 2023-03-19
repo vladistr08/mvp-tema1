@@ -14,7 +14,7 @@ namespace Card_Game
     {
         public static void SerializeToFile<ObjectToSerializeType>(string fileName, ObjectToSerializeType obj)
         {
-            fileName = "C:\\mvp\\mvp-tema1\\Card-Game\\Card-Game\\Asset\\Data\\" + fileName;
+            fileName = "../../Asset/Data/" + fileName;
             string jsonString = JsonSerializer.Serialize(obj);
             File.WriteAllText(fileName, jsonString);            
         }
@@ -22,7 +22,7 @@ namespace Card_Game
         public static ObjectToDeserializeType DeserializeFromFile<ObjectToDeserializeType>(string fileName)
         {
             if (!(fileName[0] == 'C' && fileName[1] == ':'))
-                fileName = "C:\\mvp\\mvp-tema1\\Card-Game\\Card-Game\\Asset\\Data\\" + fileName;
+                fileName = "../../Asset/Data/" + fileName;
 
             var jsonData = File.ReadAllText(fileName);
             ObjectToDeserializeType result = JsonSerializer.Deserialize<ObjectToDeserializeType>(jsonData);
@@ -33,7 +33,7 @@ namespace Card_Game
         {
             try
             {
-                filePath = "C:\\mvp\\mvp-tema1\\Card-Game\\Card-Game\\Asset\\Data\\" + filePath;
+                filePath = "C:../../Asset/Data/" + filePath;
                 //create a file sample.txt in current working directory 
                 if (!File.Exists(filePath))
                 {
