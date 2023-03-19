@@ -26,14 +26,14 @@ namespace Card_Game
 
             var jsonData = File.ReadAllText(fileName);
             ObjectToDeserializeType result = JsonSerializer.Deserialize<ObjectToDeserializeType>(jsonData);
-            MessageBox.Show(result.ToString());
             return result;
         }
 
         public static void DeleteFileFromPath(string filePath)
         {
             try
-            { 
+            {
+                filePath = "C:\\mvp\\mvp-tema1\\Card-Game\\Card-Game\\Asset\\Data\\" + filePath;
                 //create a file sample.txt in current working directory 
                 if (!File.Exists(filePath))
                 {

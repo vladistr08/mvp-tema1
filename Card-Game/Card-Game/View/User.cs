@@ -19,21 +19,31 @@ namespace Card_Game.View
             Users = GetAllUsers();
             UserNames = View.User.GetUserNames();
             UserImagePaths = View.User.GeUserImagePaths();
-            
+
         }
-        public void AddUser(Player newPlayer)
+
+        public static Player GetUserByName(string name)
+        {
+            var allUsers = GetAllUsers();
+            foreach(var user in allUsers)
+            {
+                if(user.Name == name) return user;
+            }
+            return null;
+        }
+        public static void AddUser(Player newPlayer)
         {
             Users.Add(newPlayer);
             JsonService.SerializeToFile<Player>(newPlayer.DataFileName, newPlayer);
         }
 
-        public void RemoveUser(Player player)
+        public static void RemoveUser(Player player)
         {
             Users.Remove(player);
             JsonService.DeleteFileFromPath(player.DataFileName);
         }
 
-        public List<Player> GetAllUsers()
+        public static List<Player> GetAllUsers()
         {
             List<Player> users = new List<Player>();
             string path = "C:\\mvp\\mvp-tema1\\Card-Game\\Card-Game\\Asset\\Data\\";

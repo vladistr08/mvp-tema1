@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Card_Game.Controller;
+using Card_Game.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,26 +22,58 @@ namespace Card_Game
     /// </summary>
     public partial class SignUp : Window
     {
-        
-        private string currentImagePath;
+        ImageService imageService = new ImageService();
+        private int currentImageIndex = 0;
         public SignUp()
         {
             InitializeComponent();
+            loadImage();
+        }
+
+        private void loadImage()
+        {
+            imageSelector.Source = new BitmapImage(new Uri(imageService.GetAvatarPath(currentImageIndex)));
+        }
+
+        //save
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            string userNameInput = userInput.Text;
+            var allUsers = User.GetUserNames();
+            if (allUsers.IndexOf(userNameInput) != -1)
+            {
+                MessageBox.Show("User already exists");
+                return;
+            }
+                
+            Player newPlayer = new Player(userNameInput, imageService.GetAvatarPath(currentImageIndex));
+            User.AddUser(newPlayer);
+            MessageBox.Show("User added succesfully");
+        }
+
+        //prev
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            currentImageIndex--;
+            if (currentImageIndex < 0)
+                currentImageIndex = imageService.GetAvatarCountAvalaible() + currentImageIndex;
+            loadImage();
+        }
+
+        //next
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            currentImageIndex++;
+            if (currentImageIndex > imageService.GetAvatarCountAvalaible() - 1)
+                currentImageIndex = 0;
+            loadImage();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            string userNameInput = userInput.Text;
-            Player newPlayer = new Player(userNameInput, "../../image");
-            if (newPlayer == null)
-                MessageBox.Show("puti");
-            View.User userControl = new View.User();
-            userControl.AddUser(newPlayer);
+            SignIn signIn = new SignIn();
+            signIn.Show();
+            this.Close();
         }
     }
 }

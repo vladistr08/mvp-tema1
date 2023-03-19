@@ -83,11 +83,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controller\ImageService.cs" />
     <Compile Include="Game.xaml.cs">
       <DependentUpon>Game.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controller\JsonService.cs" />
+    <Compile Include="GameSelector.xaml.cs">
+      <DependentUpon>GameSelector.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\CardData.cs" />
+    <Compile Include="Model\Game.cs" />
     <Compile Include="Model\Player.cs" />
     <Compile Include="SignIn.xaml.cs">
       <DependentUpon>SignIn.xaml</DependentUpon>
@@ -104,6 +109,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="GameSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SignIn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -11,7 +11,7 @@
     </Window.DataContext>
     <Grid>
         <ItemsControl
-            ItemsSource="{Binding CardItems}">
+            ItemsSource="{Binding CardImages}" Margin="0,0,236,0">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <ItemsControl
@@ -24,7 +24,7 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Button Name="Card" Width="50" Height="50" Margin="6" Click="Button_Click">
-                                      <TextBlock Visibility="Hidden" Text="{Binding}"/>
+                                    <Image Source="{Binding}" Visibility="Hidden"></Image>
                                 </Button>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
@@ -32,5 +32,8 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
+        <Button Content="Back" Margin="672,359,39,28" Click="Button_Click_1"/>
+        <Button Content="Save" Margin="569,359,142,28" Click="Button_Click_2"/>
+        <Label x:Name="timeLable" Content="" HorizontalAlignment="Left" Margin="569,26,0,0" VerticalAlignment="Top" Width="192"/>
     </Grid>
 </Window>
