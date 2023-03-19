@@ -67,6 +67,7 @@ namespace Card_Game
                 selected1Ref = image;
                 selected1 = new BitmapImage((image.Source as BitmapImage).UriSource);
                 selectedButton = button;
+                selectedButton.IsEnabled= false;
             }
             else if(selected2 == null)
             {
@@ -105,6 +106,7 @@ namespace Card_Game
 
                     image.Visibility= Visibility.Hidden;
                     selected1Ref.Visibility= Visibility.Hidden;
+                    selectedButton.IsEnabled = true;
                     selected1 = null;
                     selected2 = null;
                     selectedButton = null;
