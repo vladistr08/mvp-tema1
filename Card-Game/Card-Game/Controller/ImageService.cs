@@ -33,7 +33,7 @@ namespace Card_Game.Controller
 
             if(n > paths.Count)
             {
-                MessageBox.Show("Not enough resources" + n.ToString() + " " + paths.Count.ToString());
+                MessageBox.Show("Not enough resources " + n.ToString() + " " + paths.Count.ToString());
                 return null;
             }
 

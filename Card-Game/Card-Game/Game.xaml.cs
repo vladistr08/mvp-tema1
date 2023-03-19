@@ -95,7 +95,7 @@ namespace Card_Game
                     }, DispatcherPriority.ApplicationIdle);
 
                     // wait for 2 seconds
-                    await Task.Delay(500);
+                    await Task.Delay(400);
 
                     // re-enable the UI thread
                     this.Dispatcher.Invoke(() =>
