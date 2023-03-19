@@ -23,7 +23,7 @@ namespace Card_Game
         }
         private string getDataFileName()
         {
-            System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo("../../Asset/Data/");
+            System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo("../../Asset/Data/Players/");
             int count = dir.GetFiles().Length + 1;
             return count.ToString() + "_" + Name + "_" + Id.ToString();
         }
