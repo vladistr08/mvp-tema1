@@ -64,7 +64,7 @@ namespace Card_Game
         //exit
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            MessageBox.Show("Istratescu Vlad, 10LF312, Informatica Aplicata, Nu am salvarea de joc si statistici :(");
         }
     }
 }

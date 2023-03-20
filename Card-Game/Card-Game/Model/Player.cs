@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Card_Game.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,8 @@ namespace Card_Game
         public string Name { get; set; }
         public string ProfileImagePath { get; set; }
         public string DataFileName { get; set; }
+
+        //public Statistics Statistics { get; set; }
 
         public Player(string name, string profileImagePath)
         {

@@ -80,6 +80,8 @@ namespace Card_Game
                     if(guessed == CardData.Columns * CardData.Rows / 2)
                     {
                         MessageBox.Show("You won!");
+                        game.AddWin();
+                        game.SaveStatistics();
                     }
                     game.Moves.Add(new Tuple<string, string>(selected1.UriSource.ToString(), selected2.UriSource.ToString()));
                     selected1 = null;
@@ -115,6 +117,7 @@ namespace Card_Game
 
         }
 
+        //back
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             GameSelector gameSelector = new GameSelector(currentPlayer);
@@ -122,9 +125,10 @@ namespace Card_Game
             this.Close();
         }
 
+        //save
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-
+            game.Save();
         }
     }
 }

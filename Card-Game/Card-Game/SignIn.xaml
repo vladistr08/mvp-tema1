@@ -16,6 +16,7 @@
         <Button Content="Exit" HorizontalAlignment="Left" Margin="600,345,0,0" VerticalAlignment="Top" Height="37" Width="92" Click="Button_Click_3"/>
         <ListBox ItemsSource="{Binding UserNames}" Margin="77,34,297,94" SelectionChanged="ListBox_SelectionChanged"/>
         <Image x:Name="imageAvatar" Margin="550,39,58,188"/>
+        <Button Content="Help" HorizontalAlignment="Left" Margin="600,283,0,0" VerticalAlignment="Top" Height="37" Width="92" Click="Button_Click_3"/>
 
     </Grid>
 </Window>
