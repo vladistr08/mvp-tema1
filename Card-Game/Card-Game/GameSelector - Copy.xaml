@@ -1,0 +1,17 @@
+﻿<Window x:Class="Card_Game.GameSelector"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Card_Game"
+        mc:Ignorable="d"
+        Title="GameSelector" Height="450" Width="800">
+    <Grid>
+        <Button Content="Start New" HorizontalAlignment="Left" Margin="338,33,0,0" VerticalAlignment="Top" Height="61" Width="62" Click="Button_Click"/>
+        <Button Content="Load" HorizontalAlignment="Left" Margin="437,33,0,0" VerticalAlignment="Top" Height="61" Width="62" Click="Button_Click_1"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="534,33,0,0" VerticalAlignment="Top" Height="61" Width="62" Click="Button_Click_2"/>
+        <TextBox x:Name="rowsInput" HorizontalAlignment="Left" Margin="28,33,0,0" TextWrapping="Wrap" Text="6" VerticalAlignment="Top" Width="119" Height="43" TextChanged="rowsInput_TextChanged"/>
+        <TextBox x:Name="colsInput" HorizontalAlignment="Left" Margin="178,33,0,0" TextWrapping="Wrap" Text="6" VerticalAlignment="Top" Width="119" Height="43" TextChanged="colsInput_TextChanged"/>
+
+    </Grid>
+</Window>
